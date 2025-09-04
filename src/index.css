@@ -8,35 +8,80 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Industrial Control Room Theme */
+    --background: 210 30% 8%;
+    --foreground: 210 20% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 210 25% 12%;
+    --card-foreground: 210 20% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 210 25% 12%;
+    --popover-foreground: 210 20% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 204 100% 60%;
+    --primary-foreground: 210 30% 8%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 210 25% 18%;
+    --secondary-foreground: 210 20% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 25% 15%;
+    --muted-foreground: 210 15% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 192 100% 45%;
+    --accent-foreground: 210 30% 8%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 20% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --warning: 45 100% 65%;
+    --warning-foreground: 210 30% 8%;
 
-    --radius: 0.5rem;
+    --success: 142 76% 36%;
+    --success-foreground: 210 20% 98%;
+
+    --border: 210 25% 20%;
+    --input: 210 25% 18%;
+    --ring: 204 100% 60%;
+
+    /* Industrial specific tokens */
+    --status-optimal: 142 76% 36%;
+    --status-warning: 45 100% 65%;
+    --status-critical: 0 84% 60%;
+    --status-offline: 210 15% 45%;
+
+    /* AI insight panel */
+    --ai-panel: 260 100% 20%;
+    --ai-panel-foreground: 260 20% 95%;
+    --ai-accent: 260 100% 70%;
+
+    /* Process stage colors */
+    --mining: 30 100% 50%;
+    --crushing: 60 100% 45%;
+    --rawmeal: 120 60% 45%;
+    --preheating: 180 80% 50%;
+    --clinkerization: 220 100% 60%;
+    --cooling: 240 80% 60%;
+    --grinding: 280 100% 60%;
+    --storage: 320 80% 55%;
+    --quality: 200 100% 65%;
+    --emissions: 160 60% 45%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(204 100% 60%), hsl(192 100% 45%));
+    --gradient-industrial: linear-gradient(135deg, hsl(210 25% 12%), hsl(210 25% 18%));
+    --gradient-ai: linear-gradient(135deg, hsl(260 100% 20%), hsl(260 100% 30%));
+    --gradient-process: linear-gradient(45deg, hsl(var(--card)), hsl(210 25% 15%));
+
+    /* Shadows and effects */
+    --shadow-industrial: 0 8px 32px hsla(210, 30%, 5%, 0.4);
+    --shadow-glow: 0 0 30px hsla(204, 100%, 60%, 0.3);
+    --shadow-ai: 0 4px 20px hsla(260, 100%, 20%, 0.4);
+
+    /* Animation variables */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s ease-out;
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 

@@ -36,6 +36,14 @@ export default {
 					DEFAULT: 'hsl(var(--destructive))',
 					foreground: 'hsl(var(--destructive-foreground))'
 				},
+				warning: {
+					DEFAULT: 'hsl(var(--warning))',
+					foreground: 'hsl(var(--warning-foreground))'
+				},
+				success: {
+					DEFAULT: 'hsl(var(--success))',
+					foreground: 'hsl(var(--success-foreground))'
+				},
 				muted: {
 					DEFAULT: 'hsl(var(--muted))',
 					foreground: 'hsl(var(--muted-foreground))'
@@ -51,6 +59,32 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
+				},
+				// Industrial status colors
+				status: {
+					optimal: 'hsl(var(--status-optimal))',
+					warning: 'hsl(var(--status-warning))',
+					critical: 'hsl(var(--status-critical))',
+					offline: 'hsl(var(--status-offline))'
+				},
+				// AI panel colors
+				ai: {
+					panel: 'hsl(var(--ai-panel))',
+					foreground: 'hsl(var(--ai-panel-foreground))',
+					accent: 'hsl(var(--ai-accent))'
+				},
+				// Process stage colors
+				process: {
+					mining: 'hsl(var(--mining))',
+					crushing: 'hsl(var(--crushing))',
+					rawmeal: 'hsl(var(--rawmeal))',
+					preheating: 'hsl(var(--preheating))',
+					clinkerization: 'hsl(var(--clinkerization))',
+					cooling: 'hsl(var(--cooling))',
+					grinding: 'hsl(var(--grinding))',
+					storage: 'hsl(var(--storage))',
+					quality: 'hsl(var(--quality))',
+					emissions: 'hsl(var(--emissions))'
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
@@ -86,9 +120,33 @@ export default {
 					}
 				}
 			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-industrial': 'var(--gradient-industrial)',
+				'gradient-ai': 'var(--gradient-ai)',
+				'gradient-process': 'var(--gradient-process)'
+			},
+			boxShadow: {
+				'industrial': 'var(--shadow-industrial)',
+				'glow': 'var(--shadow-glow)',
+				'ai': 'var(--shadow-ai)'
+			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+				'data-flow': 'data-flow 3s ease-in-out infinite'
+			},
+			keyframes: {
+				...this.theme?.extend?.keyframes,
+				'pulse-glow': {
+					'0%, 100%': { boxShadow: '0 0 20px hsla(204, 100%, 60%, 0.3)' },
+					'50%': { boxShadow: '0 0 40px hsla(204, 100%, 60%, 0.6)' }
+				},
+				'data-flow': {
+					'0%': { transform: 'translateX(-100%)' },
+					'100%': { transform: 'translateX(100%)' }
+				}
 			}
 		}
 	},
