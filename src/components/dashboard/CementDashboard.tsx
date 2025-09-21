@@ -3,6 +3,9 @@ import { DashboardHeader } from "./DashboardHeader";
 import { ProcessStageCard } from "./ProcessStageCard";
 import { AIInsightsPanel } from "./AIInsightsPanel";
 import { ProcessDetailModal } from "./ProcessDetailModal";
+import { DetailedExplanationModal } from "./DetailedExplanationModal";
+import { Button } from "@/components/ui/button";
+import { FileText } from "lucide-react";
 import { 
   Mountain, 
   Hammer, 
@@ -188,6 +191,7 @@ const processStages: ProcessStage[] = [
 
 export const CementDashboard = () => {
   const [selectedProcess, setSelectedProcess] = useState<ProcessStage | null>(null);
+  const [showExplanation, setShowExplanation] = useState(false);
 
   return (
     <div className="min-h-screen bg-background">
@@ -214,10 +218,22 @@ export const CementDashboard = () => {
             </div>
           </div>
           
-          {/* AI Insights Panel */}
+      {/* AI Insights Panel */}
           <div className="xl:col-span-1">
             <AIInsightsPanel />
           </div>
+        </div>
+
+        {/* Detailed Explanation Button */}
+        <div className="mt-8 flex justify-center">
+          <Button 
+            onClick={() => setShowExplanation(true)}
+            size="lg"
+            className="bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 text-white px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+          >
+            <FileText className="w-5 h-5 mr-2" />
+            Detailed Explanation
+          </Button>
         </div>
       </div>
       
@@ -230,6 +246,12 @@ export const CementDashboard = () => {
           processColor={selectedProcess.processColor}
         />
       )}
+
+      {/* Detailed Explanation Modal */}
+      <DetailedExplanationModal
+        isOpen={showExplanation}
+        onClose={() => setShowExplanation(false)}
+      />
     </div>
   );
 };
